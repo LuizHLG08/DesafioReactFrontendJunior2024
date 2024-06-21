@@ -2,10 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app";
 import reportWebVitals from "./reportWebVitals";
+import { TodoProvider } from "./providers/TodoContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <TodoProvider>
+        <App />
+      </TodoProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
