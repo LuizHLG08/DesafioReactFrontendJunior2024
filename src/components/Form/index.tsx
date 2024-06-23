@@ -12,7 +12,7 @@ export const Form = () => {
     const { register, handleSubmit, reset } = useForm<TodoFormSchema>();
     const [isFocused, setIsFocused] = useState(false);
     const [isSelectClicked, setIsSelectClicked] = useState(false);
-    const { addTodo, toggleAllTodos, allCompleted } = useContext(TodoContext);
+    const { addTodo, toggleAllTodos, allCompleted, backupTodoList } = useContext(TodoContext);
     const selectRef = useOutclick(() => {
         setIsSelectClicked(false);
     })
@@ -24,7 +24,8 @@ export const Form = () => {
 
     return (
         <form onSubmit={handleSubmit(submit)} className={`${styles.form} ${isFocused && styles.focused}`}>
-            <div ref={selectRef} className={`${styles.select} ${isSelectClicked && styles.selectClicked}`}
+            {backupTodoList.length > 0 && (
+                <div ref={selectRef} className={`${styles.select} ${isSelectClicked && styles.selectClicked}`}
                 onClick={() => {
                     toggleAllTodos();
                     setIsSelectClicked(true);
@@ -45,8 +46,10 @@ export const Form = () => {
                     <polyline points="6 9 12 15 18 9" />
                 </svg>
             </div>
+            )}
             <Input
                 onFocus={() => setIsFocused(true)}
+                style={backupTodoList.length == 0 ? {padding: '0 4rem'} : undefined}
                 type="text"
                 placeholder="What needs to be done?"
                 onKeyDown={(e) => {

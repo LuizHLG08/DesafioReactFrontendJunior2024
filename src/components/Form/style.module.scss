@@ -1,9 +1,9 @@
 .form {
     width: 100%;
     display: flex;
-    justify-content: center;
-    border: 2px solid var(--color-grey-0);
-
+    justify-content: end;
+    border: 2px solid transparent;
+    box-shadow: 1px 10px 15px -6px rgba(0, 0, 0, 0.2);
     .select{
         height: 4rem;
         width: 4rem;
