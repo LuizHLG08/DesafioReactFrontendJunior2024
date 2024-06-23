@@ -3,15 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./app";
 import reportWebVitals from "./reportWebVitals";
 import { TodoProvider } from "./providers/TodoContext";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <TodoProvider>
             <App />
         </TodoProvider>
-    </React.StrictMode>,
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

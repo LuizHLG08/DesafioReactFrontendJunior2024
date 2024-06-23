@@ -32,6 +32,7 @@
     border: 1px solid transparent;
     transition: 0.3s;
     cursor: pointer;
+    border-radius: 3px;
     
     &:hover {
         border-color: var(--color-brand-1);
