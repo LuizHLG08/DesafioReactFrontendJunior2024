@@ -23,7 +23,12 @@ export interface ITodoProviderProps {
 
 export interface ITodoContext {
     todoList: ITodo[];
-    setEditingTodo: any;
-    addTodo: any;
-    editTodo: any
+    addTodo: (formData : TodoFormSchema) => void;
+    editTodo: ({ id, formData }: {
+        id: string;
+        formData: Partial<ITodo>;
+    }) => void;
+    removeTodo: (id: string) => void;
+    toggleAllTodos: () => void;
+    allCompleted: boolean;
 }

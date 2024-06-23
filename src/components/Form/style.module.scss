@@ -2,4 +2,28 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    border: 2px solid transparent;
+
+    .select{
+        height: 4rem;
+        width: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid transparent;
+
+        svg {
+            stroke: var(--color-grey-1);
+            transition: 0.3s;
+        }
+        .allCompleted {
+            stroke: var(--color-grey-4);
+        }
+    }
+    .selectClicked {
+        border: 2px solid var(--color-brand-2);
+    }
+}
+.focused {
+    border: 2px solid var(--color-brand-2);
 }

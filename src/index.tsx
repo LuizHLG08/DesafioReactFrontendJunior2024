@@ -1,21 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./app";
 import reportWebVitals from "./reportWebVitals";
 import { TodoProvider } from "./providers/TodoContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const queryClient = new QueryClient();
 
-ReactDOM.render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <TodoProvider>
-        <App />
-      </TodoProvider>
-    </QueryClientProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+        <TodoProvider>
+            <App />
+        </TodoProvider>
+    </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

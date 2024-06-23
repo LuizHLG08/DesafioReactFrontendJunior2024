@@ -1,0 +1,86 @@
+.card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.5rem;
+    border: 1px solid var(--color-grey-0);
+    cursor: default;
+
+    &:hover .removeBtn {
+        color: var(--color-grey-1)
+    }
+
+    .checkboxWrapper {
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--color-grey-1);
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        position: relative;
+        left: 8px;
+
+        input {
+            display: none;
+        }
+
+        .checkmark {
+            position: absolute;
+            bottom: -50px;
+            left: 0.5rem;
+            height: 5rem;
+            width: 5rem;
+            color: transparent;
+            transition: 0.3s;
+            user-select: none;
+        }
+
+        .checkmarkChecked {
+            color: green;
+
+
+        }
+    }
+
+    .removeBtn {
+        margin-left: auto;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: transparent;
+        font-size: 16px;
+        transition: 0.3s;
+
+        &:hover {
+            color: var(--color-brand-2) !important;
+        }
+        .customIcon {
+            transition: 0.3s;
+            fill: transparent;
+        }
+
+        .hovered {
+            fill: var(--color-grey-1);
+            &:hover {
+                fill: var(--color-brand-2);
+            }
+        }
+    }
+}
+
+.finished {
+    transition: 0.3s;
+    text-decoration: line-through;
+    color: #949494
+}
+
+
+.titleInput {
+    width: 100%;
+    border: 2px solid var(--color-brand-2);
+    height: 4rem;
+    font-size: 1.5rem;
+    padding-left: 4rem;
+}
