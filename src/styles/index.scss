@@ -25,7 +25,8 @@ body {
         }
         .background1 {
             content: '';
-            width: 66%;
+            width: 77%;
+            max-width: 530px;
             height: 7px;
             background-color: var(--fixed-white);
             border: 1px solid var(--color-grey-0);
@@ -35,7 +36,8 @@ body {
 
         .background2 {
             content: '';
-            width: 64%;
+            width: 75%;
+            max-width: 515px;
             height: 7px;
             background-color: var(--fixed-white);
             border: 1px solid var(--color-grey-0);
