@@ -1,0 +1,44 @@
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    border: 1px solid var(--color-grey-0);
+
+
+    span {
+        font-weight: 300;
+    }
+
+    .buttonsContainer{
+        display: flex;
+        gap: 0.25rem;
+        margin-left: 1rem;
+    }
+
+    .clearCompleted {
+        border: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.filterButton {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    transition: 0.3s;
+    cursor: pointer;
+    
+    &:hover {
+        border-color: var(--color-brand-1);
+    }
+}
+
+.selected {
+    border:1px solid --color-brand-1 !important;
+    box-shadow: 1px 1px 6px var(--color-brand-1);
+}

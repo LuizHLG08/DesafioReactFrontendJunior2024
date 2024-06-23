@@ -23,6 +23,7 @@ export interface ITodoProviderProps {
 
 export interface ITodoContext {
     todoList: ITodo[];
+    backupTodoList: ITodo[];
     addTodo: (formData : TodoFormSchema) => void;
     editTodo: ({ id, formData }: {
         id: string;
@@ -31,4 +32,9 @@ export interface ITodoContext {
     removeTodo: (id: string) => void;
     toggleAllTodos: () => void;
     allCompleted: boolean;
+    leftTodos: number;
+    getAllTodos: () => void;
+    getActiveTodos: () => void;
+    getCompletedTodos: () => void;
+    clearCompleted: () => void;
 }
