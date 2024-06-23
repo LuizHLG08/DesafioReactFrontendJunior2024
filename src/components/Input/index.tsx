@@ -1,5 +1,5 @@
 import { IInputProps } from "../../interfaces";
-import styles from "./style.module.scss"
+import styles from "./style.module.scss";
 import { ForwardedRef, forwardRef } from "react";
 
 export const Input = forwardRef(({label, ...rest} : IInputProps, ref : ForwardedRef<HTMLInputElement>) => {

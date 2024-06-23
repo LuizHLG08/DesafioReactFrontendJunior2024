@@ -1,12 +1,12 @@
-import styles from "./style.module.scss"
-import { useContext } from "react"
-import { TodoContext } from "../../providers/TodoContext"
-import { TodoCard } from "./TodoCard"
-import { FilterSection } from "../FIlterSection"
+import styles from "./style.module.scss";
+import { useContext } from "react";
+import { TodoContext } from "../../providers/TodoContext";
+import { TodoCard } from "./TodoCard";
+import { FilterSection } from "../FIlterSection";
 
 export const TodoList = () => {
 
-    const { todoList, backupTodoList } = useContext(TodoContext)
+    const { todoList, backupTodoList } = useContext(TodoContext);
 
     return (
         <>

@@ -21,25 +21,9 @@ export const TodoCard = ({ todo }: ITodoCardProps) => {
         setNewTitle(todo.title);
     }, [todo.title]);
 
-    const handleCheckboxChange = () => {
-        editTodo({ id: todo.id, formData: { isDone: !todo.isDone } });
-    };
-
-    const handleRemoveClick = () => {
-        removeTodo(todo.id);
-    };
-
-    const handleDoubleClick = () => {
-        setIsEditing(true);
-    };
-
-    const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setNewTitle(e.target.value);
-    };
-
     const handleTitleSubmit = () => {
         if (newTitle.trim() === "") {
-            setNewTitle(todo.title); // Revert to the original title if the input is empty
+            setNewTitle(todo.title);
             setIsEditing(false);
             return;
         }
@@ -64,7 +48,7 @@ export const TodoCard = ({ todo }: ITodoCardProps) => {
                         id={`checkbox-${todo.id}`}
                         type="checkbox"
                         checked={todo.isDone}
-                        onChange={handleCheckboxChange}
+                        onChange={() => editTodo({ id: todo.id, formData: { isDone: !todo.isDone } })}
                     />
                     <label htmlFor={`checkbox-${todo.id}`} className={styles.checkboxLabel}>
                         <span className={`${styles.checkmark} ${todo.isDone && styles.checkmarkChecked} `}>✔</span>
@@ -76,7 +60,7 @@ export const TodoCard = ({ todo }: ITodoCardProps) => {
                 <input
                     type="text"
                     value={newTitle}
-                    onChange={handleTitleChange}
+                    onChange={(e) => setNewTitle(e.target.value)}
                     onBlur={handleTitleSubmit}
                     onKeyPress={handleTitleKeyPress}
                     className={styles.titleInput}
@@ -84,15 +68,15 @@ export const TodoCard = ({ todo }: ITodoCardProps) => {
                 />
             ) : (
                 <span
-                    className={`${todo.isDone && styles.finished} title`}
-                    onDoubleClick={handleDoubleClick}
+                    className={`${todo.isDone && styles.finished} ${styles.title}`}
+                    onDoubleClick={() => setIsEditing(true)}
                 >
                     {todo.title}
                 </span>
             )}
 
             {!isEditing && (
-                <button className={styles.removeBtn} onClick={handleRemoveClick}>
+                <button className={styles.removeBtn} onClick={() => removeTodo(todo.id)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" className={`${styles.customIcon} ${hover && styles.hovered}`}>
                         <path d="M12 10.586l4.95-4.95 1.414 1.414L13.414 12l4.95 4.95-1.414 1.414L12 13.414l-4.95 4.95-1.414-1.414L10.586 12 5.636 7.05l1.414-1.414L12 10.586z" />
                     </svg>

@@ -1,11 +1,11 @@
-import styles from "./styles.module.scss"
-import { useContext, useState } from "react"
-import { TodoContext } from "../../providers/TodoContext"
+import styles from "./styles.module.scss";
+import { useContext, useState } from "react";
+import { TodoContext } from "../../providers/TodoContext";
 
 export const FilterSection = () => {
 
-    const [ selected, setSelected ] = useState("1")
-    const { leftTodos, getAllTodos, getActiveTodos, getCompletedTodos, clearCompleted } = useContext(TodoContext)
+    const [ selected, setSelected ] = useState("1");
+    const { leftTodos, getAllTodos, getActiveTodos, getCompletedTodos, clearCompleted } = useContext(TodoContext);
 
     return (
         <section className={styles.section}>
@@ -15,8 +15,8 @@ export const FilterSection = () => {
                     id="1"
                     className={`${styles.filterButton} ${selected == "1" && styles.selected}`}
                     onClick={() => {
-                        getAllTodos()
-                        setSelected("1")
+                        getAllTodos();
+                        setSelected("1");
                     }}
                 >
                     All
@@ -25,8 +25,8 @@ export const FilterSection = () => {
                     id="2"
                     className={`${styles.filterButton} ${selected == "2" && styles.selected}`}
                     onClick={() => {
-                        getActiveTodos()
-                        setSelected("2")
+                        getActiveTodos();
+                        setSelected("2");
                     }}
                 >
                     Active
@@ -35,8 +35,8 @@ export const FilterSection = () => {
                     id="3"
                     className={`${styles.filterButton} ${selected == "3" && styles.selected}`}
                     onClick={() => {
-                        getCompletedTodos()
-                        setSelected("3")
+                        getCompletedTodos();
+                        setSelected("3");
                     }}
                 >
                     Completed

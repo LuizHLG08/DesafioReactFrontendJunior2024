@@ -13,6 +13,8 @@ export default function App() {
         <Form />
         <TodoList />
       </main>
+      <div className="background1"></div>
+      <div className="background2"></div>
       <Footer />
     </>
   );
