@@ -8,7 +8,7 @@ export const FilterSection = () => {
     const { leftTodos, getAllTodos, getActiveTodos, getCompletedTodos, clearCompleted } = useContext(TodoContext);
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} data-testid="filterSection">
             <span>{leftTodos} items left!</span>
             <div className={styles.buttonsContainer}>
                 <button 

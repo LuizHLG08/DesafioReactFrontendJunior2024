@@ -10,7 +10,7 @@ export const TodoList = () => {
 
     return (
         <>
-            <ul className={styles.list}>
+            <ul data-testid="todoList" className={styles.list}>
                 {todoList?.map(todo => (
                     <TodoCard key={todo.id} todo={todo} />
                 ))}

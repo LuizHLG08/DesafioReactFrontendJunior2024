@@ -24,6 +24,7 @@ export const Form = () => {
 
     return (
         <form 
+            data-testid="todoForm"
             onSubmit={handleSubmit(submit)} 
             className={`${styles.form} ${isFocused && styles.focused}`}
             style={backupTodoList.length > 0 ? {boxShadow: 'none'} : undefined}
