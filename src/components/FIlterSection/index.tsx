@@ -13,7 +13,8 @@ export const FilterSection = () => {
             <div className={styles.buttonsContainer}>
                 <button 
                     id="1"
-                    className={`${styles.filterButton} ${selected == "1" && styles.selected}`}
+                    data-testid="button1"
+                    className={`${styles.filterButton} ${selected === "1" && styles.selected}`}
                     onClick={() => {
                         getAllTodos();
                         setSelected("1");
@@ -23,7 +24,8 @@ export const FilterSection = () => {
                 </button>
                 <button 
                     id="2"
-                    className={`${styles.filterButton} ${selected == "2" && styles.selected}`}
+                    data-testid="button2"
+                    className={`${styles.filterButton} ${selected === "2" && styles.selected}`}
                     onClick={() => {
                         getActiveTodos();
                         setSelected("2");
@@ -33,7 +35,8 @@ export const FilterSection = () => {
                 </button>
                 <button 
                     id="3"
-                    className={`${styles.filterButton} ${selected == "3" && styles.selected}`}
+                    data-testid="button3"
+                    className={`${styles.filterButton} ${selected === "3" && styles.selected}`}
                     onClick={() => {
                         getCompletedTodos();
                         setSelected("3");
@@ -43,6 +46,7 @@ export const FilterSection = () => {
                 </button>
             </div>
             <button 
+                data-testid="clearButton"
                 className={`${styles.filterButton} ${styles.clearCompleted}`}
                 onClick={clearCompleted}
             >

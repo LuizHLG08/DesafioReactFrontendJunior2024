@@ -5,7 +5,7 @@ export const Footer = () => {
         <footer className={styles.footer}>
             <p>Double-click to edit a todo</p>
             <p>Created by LuizHLG</p>
-            <p>YouTube Channel: <a href="https://www.youtube.com/channel/UC0pOPYzBzw2GM9TVd4AlYrA" target="_blank">MagoDev</a></p>
+            <p>YouTube Channel: <a href="https://www.youtube.com/channel/UC0pOPYzBzw2GM9TVd4AlYrA" target="_blank" rel="noreferrer">MagoDev</a></p>
         </footer>
     )
 }

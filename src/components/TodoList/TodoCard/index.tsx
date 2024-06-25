@@ -32,13 +32,15 @@ export const TodoCard = ({ todo }: ITodoCardProps) => {
     };
 
     const handleTitleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
+        if (e.key === "Enter") {
             handleTitleSubmit();
         }
     };
 
     return (
-        <li className={styles.card}
+        <li 
+            data-testid="todoCard"
+            className={styles.card}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
