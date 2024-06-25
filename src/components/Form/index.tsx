@@ -60,7 +60,7 @@ export const Form = () => {
             )}
             <Input
                 onFocus={() => setIsFocused(true)}
-                style={backupTodoList.length == 0 ? { padding: "0 4rem" } : undefined}
+                style={backupTodoList.length === 0 ? { padding: "0 4rem" } : undefined}
                 type="text"
                 placeholder="What needs to be done?"
                 onKeyDown={(e) => {
